@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM API 모음</title>
+  </head>
+  <body>
+    <div id="요소">Hello</div>
+    <input id="인풋" type="텍스트" value="밸류" />
+    <script>
+      const 인풋 = document.getElementById("인풋");
+
+      인풋.value = "값을 입력하는 중~";
+
+      //요소노드 취득
+      document.getElementById("id");
+      document.getElementsByTagName("li");
+      document.getElementsByClassName("class");
+      document.querySelector("#선택자");
+      document.querySelectorAll(".선택자");
+      Element.matches(".선택자");
+
+      const 요소 = document.getElementById("요소");
+
+      // 노드 탐색
+      요소.childNodes;
+      요소.children;
+      요소.firstChild;
+      요소.lastChild;
+      요소.firstElementChild;
+      요소.lastElementChild;
+      요소.hasChildNodes;
+      요소.parentNode;
+      요소.previousSibling;
+      요소.nextSibling;
+      요소.previousElementSibling;
+      요소.nextElementSibling;
+
+      // 노드 정보 취득
+      요소.nodeType;
+      요소.nodeName;
+
+      // 요소노드의 텍스트조작
+      요소.nodeValue;
+      요소.textContent = "안녕";
+
+      // DOM 조작
+      // HTML 마크업 조작
+      요소.innerHTML = "<p>안녕<p>";
+      요소.insertAdjacentHTML("<p>안녕<p>");
+      // 노드 생성과 추가
+      document.createElement("li");
+      document.createTextNode("안녕");
+      document.createDocumentFragment();
+      요소.appendChild(a);
+      요소.insertBefore(a, b);
+      요소.cloneNode(true | false);
+      요소.replaceChild(a, b);
+      요소.removeChild(a);
+
+      console.log(인풋.attributes);
+      console.log(인풋.attributes.id.value);
+      console.log(인풋.attributes.type.value);
+      console.log(인풋.attributes.value.value);
+
+      인풋.getAttribute("value");
+      인풋.setAttribute("value", "발루");
+      console.log("value가 있니?", 인풋.hasAttribute("value"));
+      인풋.removeAttribute("value");
+      console.log("value가 있니?", 인풋.hasAttribute("value"));
+    </script>
+  </body>
+</html>
